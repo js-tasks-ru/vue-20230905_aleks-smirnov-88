@@ -1,56 +1,58 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <title>VueCalculator</title>
-    <link rel="stylesheet" href="/assets/styles/index.css" />
-    <style>
-      @font-face {
-        font-family: emoji;
-        src: local('Apple Color Emoji'), local('Android Emoji'), local('Segoe UI Emoji'), local(EmojiSymbols),
-          local(Symbola);
-      }
 
-      .row {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <title>VueCalculator</title>
+  <link rel="stylesheet" href="/assets/styles/index.css" />
+  <style>
+    @font-face {
+      font-family: emoji;
+      src: local('Apple Color Emoji'), local('Android Emoji'), local('Segoe UI Emoji'), local(EmojiSymbols),
+        local(Symbola);
+    }
 
-      .col {
-        padding: 0.5rem;
-      }
+    .row {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
 
-      input[type='number'] {
-        width: 48px;
-      }
-    </style>
-  </head>
+    .col {
+      padding: 0.5rem;
+    }
 
-  <body>
-    <div id="app" class="container">
-      <div class="row">
-        <div class="col">
-          <input v-model="firstOperand" type="number" />
-        </div>
+    input[type='number'] {
+      width: 48px;
+    }
+  </style>
+</head>
 
-        <div class="col" style="display: flex; flex-direction: column; font-family: emoji">
-          <label><input type="radio" name="operator" v-model="operator" value="sum" /> ➕</label>
-          <label><input type="radio" name="operator" v-model="operator" value="subtract" /> ➖</label>
-          <label><input type="radio" name="operator" v-model="operator" value="multiply" /> ✖</label>
-          <label><input type="radio" name="operator" v-model="operator" value="divide" /> ➗</label>
-        </div>
-
-        <div class="col">
-          <input v-model="secondOperand" type="number" />
-        </div>
-
-        <div class="col">=</div>
-
-        <output class="col">{{ calcResult }}</output>
+<body>
+  <div id="app" class="container">
+    <div class="row">
+      <div class="col">
+        <input v-model="firstOperand" type="number" />
       </div>
-    </div>
 
-    <script type="module" src="./script.js"></script>
-  </body>
+      <div class="col" style="display: flex; flex-direction: column; font-family: emoji">
+        <label><input type="radio" name="operator" v-model="operator" value="sum" /> ➕</label>
+        <label><input type="radio" name="operator" v-model="operator" value="subtract" /> ➖</label>
+        <label><input type="radio" name="operator" v-model="operator" value="multiply" /> ✖</label>
+        <label><input type="radio" name="operator" v-model="operator" value="divide" /> ➗</label>
+      </div>
+
+      <div class="col">
+        <input v-model="secondOperand" type="number" />
+      </div>
+
+      <div class="col">=</div>
+
+      <output class="col">{{ calcResult }}</output>
+    </div>
+  </div>
+
+  <script type="module" src="./script.js"></script>
+</body>
+
 </html>
