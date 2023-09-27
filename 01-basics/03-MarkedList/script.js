@@ -30,16 +30,26 @@ const emails = [
 ];
 
 const app = createApp({
+  emails,
+
   data() {
     return {
-      emails,
       search: null,
     }
   },
+
   computed: {
     filteredEmails() {
-      return this.emails.filter(el => el.includes(this.search));
-    }
+      return this.$options.emails.reduce((acc, el) =>
+        [
+          ...acc,
+          {
+            email: el,
+            isMarked: el.includes(this.search),
+          }
+        ]
+        , []);
+    },
   }
 })
 
